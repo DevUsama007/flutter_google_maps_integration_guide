@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/convert_cordinates_to_address.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/get_current_location.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/google_map.dart';
+import 'package:google_maps_in_flutter/google_maps_implementation/google_search_places.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -64,6 +65,20 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text('Get Current Location'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const GoogleSearchPlaces(),
+                      ),
+                    );
+                  },
+                  child: const Text('Google Search Places'),
                 ),
               ),
             ],

@@ -6,6 +6,8 @@ import 'package:google_maps_in_flutter/google_maps_implementation/custom_marker_
 import 'package:google_maps_in_flutter/google_maps_implementation/get_current_location.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/google_map.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/google_search_places.dart';
+import 'package:google_maps_in_flutter/google_maps_implementation/poly_lines_on_google_map.dart';
+import 'package:google_maps_in_flutter/google_maps_implementation/polygon_on_google_map.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -114,6 +116,34 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text('Custom Marker Window Info'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PolygonOnGoogleMap(),
+                      ),
+                    );
+                  },
+                  child: const Text('Polygon on Google Map'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PolyLinesOnGoogleMap(),
+                      ),
+                    );
+                  },
+                  child: const Text('Poly Lines on Google Map'),
                 ),
               ),
             ],

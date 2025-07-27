@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:google_maps_in_flutter/google_maps_implementation/add_marker_with_icon.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/convert_cordinates_to_address.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/get_current_location.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/google_map.dart';
@@ -24,6 +25,11 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Image.asset(
+                'assets/image1.png',
+                width: 90,
+                height: 90,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: ElevatedButton(
@@ -79,6 +85,20 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text('Google Search Places'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AddMarkerWithIcon(),
+                      ),
+                    );
+                  },
+                  child: const Text('Add Marker with Icon'),
                 ),
               ),
             ],

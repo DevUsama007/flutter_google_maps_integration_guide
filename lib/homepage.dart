@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/add_marker_with_icon.dart';
+import 'package:google_maps_in_flutter/google_maps_implementation/change_map_theme.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/convert_cordinates_to_address.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/custom_marker_window_info.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/get_current_location.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/google_map.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/google_search_places.dart';
+import 'package:google_maps_in_flutter/google_maps_implementation/network_icon_on_map.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/poly_lines_on_google_map.dart';
 import 'package:google_maps_in_flutter/google_maps_implementation/polygon_on_google_map.dart';
 
@@ -144,6 +146,34 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text('Poly Lines on Google Map'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NetworkIconOnMap(),
+                      ),
+                    );
+                  },
+                  child: const Text('Network Image as a marker'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ChangeMapTheme(),
+                      ),
+                    );
+                  },
+                  child: const Text('Change Map Theme'),
                 ),
               ),
             ],
